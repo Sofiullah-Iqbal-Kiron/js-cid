@@ -1,0 +1,6 @@
+[+] analyze "dis" library and "get_instruction" method
+[+] handle errors locally from js-cid
+[+] keep error_info in cache for the first run
+
+[-] beautiful command line app in python - with Typer package
+[-] colorized print in console - with Rich and Colorama package
