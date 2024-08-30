@@ -1,5 +1,6 @@
 import sys
 import time # sleep and other time utility
+from typing import Set
 from collections import namedtuple
 import json
 
@@ -8,9 +9,6 @@ from rich import print
 from rich.console import Console
 from rich.markdown import Markdown
 from rich.syntax import Syntax
-
-# local
-from .inspection import get_file_type
 
 
 SINGLE_QUOTE = "'"
@@ -54,7 +52,18 @@ def check_availability(file_path: str) -> None:
         with open(file_path, "r"):
             pass
     except FileNotFoundError:
-        log_error_then_exit("No such file available!")
+        log_error_then_exit("No such file available! Check file name and extension is typed correctly.")
+
+
+def get_file_type(file_path: str) -> str:
+    """
+    Get file type.
+    """
+
+    file_path = str(file_path).strip().casefold()
+    the_type = "Javascript" if file_path.endswith(".js") else "Unsupported"
+
+    return the_type
 
 
 def validate_file_type(file_path: str) -> str:
@@ -83,6 +92,17 @@ def print_code_metadata(file_path: str) -> None:
         print("[+] Code inside:-")
 
 
+def get_default_syntax_object(code: str, lang: str, line_to_highlight: Set[int] = None) -> Syntax:
+    return Syntax(
+        code=code,
+        lexer=lang,
+        line_numbers=True,
+        highlight_lines=line_to_highlight,
+        theme="github-dark",
+        background_color="default",
+    )
+
+
 def print_code(file_path: str) -> None:
     """
     Takes file path and print code statements line by line.
@@ -99,12 +119,16 @@ def print_code(file_path: str) -> None:
     print("\n")
 
 
-def print_code_with_rich(file_path: str) -> None:
+def print_code_with_rich(file_path: str, line_to_highlight: Set[int]) -> None:
+    """
+    Prints code with python's "Rich Syntax" object.
+    """
+
     print_code_metadata(file_path)
 
     with open(file_path, "rt") as code_file:
         code = code_file.read()
-        syntax = Syntax(code=code, lexer="javascript", line_numbers=True, theme="github-dark", background_color="default b")
+        syntax = get_default_syntax_object(code, "javascript", line_to_highlight)
         console.print(syntax)
 
     print("\n")
@@ -116,7 +140,7 @@ def print_error_info(error_info: dict) -> None:
 
     console.print("[+] Summarized Traceback:- ")
     error_info = json.dumps(error_info, indent=4)
-    syntax = Syntax(code=error_info, lexer="json", line_numbers=True, theme="github-dark", background_color="default ")
+    syntax = get_default_syntax_object(error_info, "json")
     console.print(syntax)
 
     print("", end="\n")

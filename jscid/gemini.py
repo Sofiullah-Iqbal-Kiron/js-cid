@@ -13,8 +13,9 @@ model = genai.GenerativeModel(MODEL_NAME)
 console = Console()
 
 
-def geminiSolution(code: str, command: str):
-    response = model.generate_content(command + "Code: " + code)
-    print("")
-    markdown = Markdown(response.text)
-    console.print(markdown)
+def geminiSolution(file_path: str) -> None:
+    with open(file_path, "r") as file:
+        response = model.generate_content("Print hello in Javascript.")
+        print("")
+        markdown = Markdown(response.text)
+        console.print(markdown)

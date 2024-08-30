@@ -6,6 +6,7 @@
     "jscid",
     "Pycee",
     "stackoverflow",
-    "typer"
+    "typer",
+    "venv"
   ]
 }

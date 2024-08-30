@@ -1,9 +1,10 @@
-from subprocess import Popen, PIPE
-from collections import defaultdict
-from dis import get_instructions
-from pprint import pprint
 import sys
+from subprocess import Popen, PIPE
 from typing import Union
+import json
+
+# local
+from .utils import console, get_default_syntax_object
 
 
 def get_error_info(file_path: str, stderr=None) -> Union[dict, None]:
@@ -36,8 +37,10 @@ def get_error_info(file_path: str, stderr=None) -> Union[dict, None]:
         }
 
         if not all(error_info.values()):
-            print("Missing some data about error!!")
-            pprint(error_info)
+            console.log("Missing some data about error!!")
+            error_info = json.dumps(error_info)
+            syntax = get_default_syntax_object(error_info, "json")
+            console.print(syntax)
             sys.exit(-1)
 
         return error_info
@@ -45,7 +48,7 @@ def get_error_info(file_path: str, stderr=None) -> Union[dict, None]:
 
 def get_traceback_from_script(file_path: str) -> Union[str, None]:
     """
-    Returns the stdout and stderr by executing inside a subprocess.
+    Returns the stdout and stderr by executing the script using a subprocess.
     """
 
     command = "node " + str(file_path)
@@ -56,11 +59,12 @@ def get_traceback_from_script(file_path: str) -> Union[str, None]:
 
     if stdout == 'undefined':
         undefined_message = "My be you are trying to access a value that is not defined or assigned yet."
-        print(undefined_message)
+        console.log(undefined_message)
 
     # return_1 for testing this method, return_2 is for implementing the actual algorithm
     return_1: dict = {"stdout": stdout, "stderr": stderr}
     return_2: Union[str, None] = stderr or None
+    
     return return_2
 
 
@@ -78,7 +82,7 @@ def get_error_message(traceback: str) -> str:
 
 def get_error_type(error_message: str) -> Union[str, None]:
     '''
-    Returns the error as a noun. Implementation Incomplete.
+    Returns the error as a noun.
     '''
 
     error_type = error_message.split(":")[0]
@@ -111,17 +115,6 @@ def get_file_name(traceback) -> str:
     return file_name
 
 
-def get_file_type(file_path: str) -> str:
-    """
-    Get file type.
-    """
-    
-    file_path = str(file_path).strip().casefold()
-    the_type = "Javascript" if file_path.endswith(".js") else "Unsupported"
-
-    return the_type
-
-
 def get_code(file_path: str) -> str:
     """
     Gets the source code of the specified file.
@@ -131,14 +124,16 @@ def get_code(file_path: str) -> str:
         with open(file_path, "r") as file:
             code = file.read()
     except FileNotFoundError:
-        print("No such file available.")
+        console.log("File you specified, can not found!")
         sys.exit(0)
 
     return code
 
 
 def get_offending_line(error_line: int, code: str) -> str:
-    '''Extracts the offending line.'''
+    """
+    Extracts the offending line.
+    """
 
     error_line -= 1
     code_lines = code.splitlines()

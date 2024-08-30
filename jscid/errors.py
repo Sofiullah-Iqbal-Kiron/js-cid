@@ -11,7 +11,6 @@ def handle_error(error_info: dict):
     Output:
     query = an URL containing a stackoverflow query about the error
     jscid_hint = a possible answer for the error from this tool locally
-    ToDo: js_doc_answer = a possible answer fetched from mdn web docs
     """
 
     # objects to return from this method
