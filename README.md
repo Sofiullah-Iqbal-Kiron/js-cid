@@ -1,30 +1,42 @@
 # About
 
-A developer utility similar to google's [Pycee 2.0](https://pypi.org/project/pycee2/) but for `Javascript`. <br>
-Retrieve possible solutions from stackoverflow, google, gemini and many other sources that reduces inconsistent browsing, directly inside your system on terminal with rich syntax highlighting, solution ranking and markdown visualization.
+An utility tool for developers similar to google's [Pycee 2.0](https://pypi.org/project/pycee2/) but for `Javascript`. <br>
+Retrieves possible solutions from stackoverflow, gemini and many other resources.
 
+- Reduces inconsistent, time consuming browsing.
+- Results directly on your system terminal.
+- Rich syntax highlighting for better and fast readability.
+- Markdown visualization.
 - Open source.
-- Codes are written in such clean format that easy to customize.
+- Interestingly, **_Solution Ranking_** based on Levenshtein Similarity algorithm and most voted countup.
+- Followed clean coding methodologies.
+- Easy to customize.
 
 # Installation
 
 ### Requires
 
-- Python 3.0 or later installed on your system
+Install this softwares locally on your machine
+
+- [Python](https://www.python.org/) 3.0 or later to run the tool
+- [NodeJS](https://nodejs.org/en) runtime to extract traceback from error prone javascript file
 
 ### Steps
 
 1. Clone this repository then change directory to the project root.
 2. Create a virtual environment `python -m venv env`
-3. Activate virtual environment `env/Scripts/activate`. A green `(env)` substring indicates that the environment is activated or not.
+3. Activate virtual environment
+   - Windows: `env/Scripts/activate`
+   - Unix/Linux: `source env/bin/activate` <br/>
 4. Install necessary packages `pip install -r requirements.txt`
 
 # Usage
 
-Start terminal on project root and type `python main.py <file_name>` and see the magic. <br>
-Replace the javascript file path with `<file_name>`.
+Once the project requirements are satisfied and virtual environment is activated, open your terminal on project root and type `python main.py <file_name>` then hit enter to see the magic. <br>
+Replace the javascript file path _(relative | absolute)_ with `<file_name>`.
 
 # Todo
+
 - [x] Integrate stackoverflow api
 - [x] Integrate gemini api
 - [x] Rich and verbose design
