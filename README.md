@@ -1,23 +1,23 @@
 # About
 
-A developer utility similar to google's **_"Pycee 2.0"_** but for `Javascript`. <br>
+A developer utility similar to google's [Pycee 2.0](https://pypi.org/project/pycee2/) but for `Javascript`. <br>
 Retrieve possible solutions from stackoverflow, google, gemini and many other sources that reduces inconsistent browsing, directly inside your system on terminal with rich syntax highlighting, solution ranking and markdown visualization.
 
 - Open source.
-- Codes are written in much clean format, easy to customize.
+- Codes are written in such clean format that easy to customize.
 
 # Installation
 
 ### Requires
 
-- Python 3.0 or later
+- Python 3.0 or later installed on your system
 
 ### Steps
 
 1. Clone this repository then change directory to the project root.
 2. Create a virtual environment `python -m venv env`
 3. Activate virtual environment `env/Scripts/activate`. A green `(env)` substring indicates that the environment is activated or not.
-4. `pip install -r requirements.txt`
+4. Install necessary packages `pip install -r requirements.txt`
 
 # Usage
 
