@@ -14,7 +14,7 @@ Retrieves possible solutions from stackoverflow, gemini and many other resources
 
 # Installation
 
-### Requires
+### Requirments
 
 Install this softwares locally on your machine
 
