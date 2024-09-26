@@ -1,6 +1,6 @@
 # About
 
-An utility tool for developers similar to google's [Pycee 2.0](https://pypi.org/project/pycee2/) but for `Javascript`. <br>
+A utility tool for developers similar to google's [Pycee 2.0](https://pypi.org/project/pycee2/) but for `Javascript`. <br>
 Retrieves possible solutions from stackoverflow, gemini and many other resources.
 
 - Reduces inconsistent, time consuming browsing.
