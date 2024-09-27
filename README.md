@@ -7,10 +7,10 @@ Retrieves possible solutions from stackoverflow, gemini and many other resources
 - Results directly on your system terminal.
 - Rich syntax highlighting for better and fast readability.
 - Markdown visualization.
-- Open source.
 - Interestingly, **_Solution Ranking_** based on Levenshtein Similarity algorithm and most voted countup.
 - Followed clean coding methodologies.
 - Easy to customize.
+- Open source.
 
 # Installation
 
