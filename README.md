@@ -1,6 +1,6 @@
 # About
 
-An utility tool for developers similar to google's [Pycee 2.0](https://pypi.org/project/pycee2/) but for `Javascript`. <br>
+A utility tool for developers similar to google's [Pycee 2.0](https://pypi.org/project/pycee2/) but for `Javascript`. <br>
 Retrieves possible solutions from stackoverflow, gemini and many other resources.
 
 - Reduces inconsistent, time consuming browsing.
@@ -14,7 +14,7 @@ Retrieves possible solutions from stackoverflow, gemini and many other resources
 
 # Installation
 
-### Requires
+### Requirments
 
 Install this softwares locally on your machine
 
@@ -34,6 +34,10 @@ Install this softwares locally on your machine
 
 Once the project requirements are satisfied and virtual environment is activated, open your terminal on project root and type `python main.py <file_name>` then hit enter to see the magic. <br>
 Replace the javascript file path _(relative | absolute)_ with `<file_name>`.
+
+# Video Tutorial
+
+Or watch [this](https://youtu.be/6STIHO5lKCI) video tutorial on youtube.
 
 # Todo
 
