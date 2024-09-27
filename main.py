@@ -3,7 +3,7 @@ import sys
 
 # 3'rd party
 import typer  # command line application
-from rich import print  # same as print and is a drop-in replacement
+from rich import print  # drop-in replacement of built-in print
 from rich.console import Console
 
 # local
@@ -54,7 +54,7 @@ def main(file_name: str) -> None:
     # if solution fetching success then rule.
     console.rule("[bold red]Possible Solutions")
     stackoverflowSolution(file_name)
-    # geminiSolution(file_name)
+    geminiSolution(file_name)
 
 
 if __name__ == "__main__":

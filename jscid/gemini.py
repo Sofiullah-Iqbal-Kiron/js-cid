@@ -3,9 +3,11 @@
 import google.generativeai as genai
 from rich.markdown import Markdown
 from rich.console import Console
+from dotenv import load_dotenv
 
 
 # configuration
+load_dotenv()
 API_KEY = "AIzaSyDCn5wqFCbrdmw2Io2NlKTjLX7AZ7P9wlM"
 MODEL_NAME = "gemini-1.5-flash"
 genai.configure(api_key=API_KEY)

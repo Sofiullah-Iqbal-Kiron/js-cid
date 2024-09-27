@@ -14,7 +14,7 @@ Retrieves possible solutions from stackoverflow, gemini and many other resources
 
 # Installation
 
-### Requirments
+### Requirements
 
 Install this softwares locally on your machine
 
@@ -45,3 +45,4 @@ Or watch [this](https://youtu.be/6STIHO5lKCI) video tutorial on youtube.
 - [x] Integrate gemini api
 - [x] Rich and verbose design
 - [ ] Implement ranking
+- [ ] Use python-dotenv in development
