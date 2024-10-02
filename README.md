@@ -35,6 +35,9 @@ Install this softwares locally on your machine
 Once the project requirements are satisfied and virtual environment is activated, open your terminal on project root and type `python main.py <file_name>` then hit enter to see the magic. <br>
 Replace the javascript file path _(relative | absolute)_ with `<file_name>`.
 
+## MIT License for code
+Our tool is licensed under the [MIT License](https://github.com/Sofiullah-Iqbal-Kiron/js-cid/blob/main/LICENSE).
+
 # Video Tutorial
 
 Or watch [this](https://youtu.be/6STIHO5lKCI) video tutorial on youtube.
