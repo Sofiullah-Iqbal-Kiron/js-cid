@@ -49,5 +49,5 @@ Or watch [this](https://youtu.be/6STIHO5lKCI) video tutorial on youtube.
 - [x] Integrate stackoverflow api
 - [x] Integrate gemini api
 - [x] Rich and verbose design
-- [ ] Implement ranking
+- [x] Implement ranking
 - [ ] Use python-dotenv in development
