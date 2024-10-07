@@ -34,13 +34,11 @@ and a reliable internet connection.
 
 # Usage
 
-Once the project requirements are satisfied and virtual environment is activated, open your terminal on project root and type
-
-- `python main.py <file_name>` : in case you don't want to specify solution count.
-- `python main.py <file_name> --msc <value>` : to specify maximum solution count replace `<value>` with with that integer, default is 5
-
-then hit enter to see the magic. <br>
+Once the project requirements are satisfied and virtual environment is activated, open your terminal on project root and type `python main.py <file_name>` then hit enter to see the magic. <br>
 Replace the javascript file path _(relative | absolute)_ with `<file_name>`.
+
+<!-- - `python main.py <file_name>` : in case you don't want to specify solution count. -->
+<!-- - `python main.py <file_name> --msc <value>` : to specify maximum solution count replace `<value>` with with that integer, default is 5 -->
 
 ## MIT License for code
 
@@ -57,3 +55,4 @@ Or watch [this](https://youtu.be/6STIHO5lKCI) video tutorial on youtube.
 - [x] Rich and verbose design
 - [x] Implement ranking
 - [ ] Use python-dotenv in development
+- [ ] Integrate max-solution-count flag
