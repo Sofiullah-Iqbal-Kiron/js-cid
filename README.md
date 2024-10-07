@@ -21,6 +21,8 @@ Install this softwares locally on your machine
 - [Python](https://www.python.org/) 3.0 or later to run the tool
 - [NodeJS](https://nodejs.org/en) runtime to extract traceback from error prone javascript file
 
+and a reliable internet connection.
+
 ### Steps
 
 1. Clone this repository then change directory to the project root.

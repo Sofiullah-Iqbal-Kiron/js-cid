@@ -14,20 +14,18 @@ from jscid.utils import (
     print_code_with_rich,
     print_error_info,
 )
-from jscid.gemini import geminiSolution
 from jscid.stackoverflow import stackoverflowSolution
+from jscid.gemini import geminiSolution
 
 
-# rich console app
 console = Console()
 
 
-def main(file_name: str) -> None:
+def main(file_name: str, msc: int = 5) -> None:
     """
-    Takes fully specified relative path of the file to detect bugs and return possible solutions using Gemini and StackOverflow API.
+    Takes fully specified relative path of the file to detect bugs and returns possible solutions using Gemini and StackOverflow API.
     """
 
-    # check that specified file is exists in the operating system or not
     check_availability(file_name)
 
     file_type = validate_file_type(file_name)
@@ -40,20 +38,18 @@ def main(file_name: str) -> None:
     if error_info:
         error_at_line = error_info["line"]
     
-    # print actual code inside the file
     print_code_with_rich(file_name, set([error_at_line]))
 
-    # print summarized error message if occurs
     if error_info:
         print_error_info(error_info)
     else:
         console.log("[green]Yep! seems your script has no error :computer:\n")
         sys.exit(0)
 
-    # progress bar indicating generating solutions
-    # if solution fetching success then rule.
-    console.rule("[bold red]Possible Solutions")
+    console.rule("[bold red]Stackoverflow")
     stackoverflowSolution(file_name)
+
+    console.rule("[bold red]Gemini")
     geminiSolution(file_name)
 
 

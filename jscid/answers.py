@@ -17,7 +17,7 @@ def get_answers(query: str, error_info: dict):
     - todo: summarize long answers and make it ready to output to the user
     """
 
-    # questions = answers = None
+    questions = answers = None
     questions, answers = ask_live(query, error_info)
     sorted_answers = sorted(answers, key=attrgetter("score"), reverse=True)[:5]
     summarized_answers = []
@@ -49,13 +49,14 @@ def ask_stackoverflow(query):
         return tuple()
     
     json_response = requests.get(query).json()
-    questions = list()
+    questions = json_response["items"]
+    answered_questions = list()
 
-    for question in json_response["items"]:
+    for question in questions:
         if question["is_answered"]:
-            questions.append(Question(id=str(question["question_id"]), has_accepted="accepted_answer_id" in question))
+            answered_questions.append(Question(id=str(question["question_id"]), has_accepted="accepted_answer_id" in question))
     
-    return tuple(questions)
+    return tuple(answered_questions)
 
 
 def get_answer_content(questions: Tuple[Question]) -> Tuple[Answer, None]:

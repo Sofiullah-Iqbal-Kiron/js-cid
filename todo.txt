@@ -1,6 +1,7 @@
 [+] analyze "dis" library and "get_instruction" method
 [+] handle errors locally from js-cid
-[+] keep error_info in cache for the first run
+[+] keep error_info in cache at very first run
+[+] progress bar indicating fetching solutions
 
 [-] beautiful command line app in python - with Typer package
 [-] colorized print in console - with Rich and Colorama package

@@ -1,5 +1,5 @@
 import sys
-import time # sleep and other time utility
+import time  # sleep and other time utility
 from typing import Set
 from collections import namedtuple
 import json
@@ -23,6 +23,7 @@ BASE_URL = f"https://api.stackexchange.com/{API_VERSION}"
 SEARCH_URL = BASE_URL + f"/search?site=stackoverflow"
 ANSWERS_URL = BASE_URL + f"/questions/<id>/answers?site=stackoverflow" + "&filter=withbody" + "&order=desc" + "&sort=votes"
 
+# Javascript error types
 error_types = {
     "TypeError": "TypeError",
     "RangeError": "RangeError",
@@ -37,11 +38,13 @@ Question = namedtuple("Question", ["id", "has_accepted"])
 Answer = namedtuple("Answer", ["id", "accepted", "score", "body", "author"])
 
 HINT_MESSAGES = {
-    "TypeError": "Unsupported data type or unusual operation.",
-    "ReferenceError": "Variable reference can't be found, may be not declared.",
-    "InternalError": "Too much data so call stack exceeds it's critical size",
-    "SyntaxError": "You have a syntax error somewhere around line",
-    "URIError": "Wrong characters are used in URI function",
+    "TypeError": "Unsupported data type or unusual operation on an object.",
+    "RangeError": "May be the numerical value falls outside the acceptable range like using negative value for an array index.",
+    "ReferenceError": "Variable reference can't be found you are trying to access in line <line_number>, may be not declared or out of scope.",
+    "InternalError": "Too much data so call stack exceeds it's critical size.",
+    "SyntaxError": "You are violating javascript syntax rules somewhere around line <line_number>.",
+    "URIError": "Invalid character set available in URI function.",
+    "EvalError": "This error is deprecated, may be you are using old browser. You should consider an upgrade on your browser.",
 }
 
 console = Console()
@@ -119,6 +122,15 @@ def print_code(file_path: str) -> None:
     print("\n")
 
 
+def get_code(file_path: str) -> str:
+    code = ""
+
+    with open(file_path, "r") as file:
+        code = file.read()
+    
+    return code
+
+
 def print_code_with_rich(file_path: str, line_to_highlight: Set[int]) -> None:
     """
     Prints code with python's "Rich Syntax" object.
@@ -156,5 +168,5 @@ def print_stackoverflow_answers(answers):
     else:
         for i, ans in enumerate(answers):
             print(f"Solution {i+1}:\n")
-            console.print(Markdown(ans))
+            console.print(Markdown(ans.answer))
             print("\n")

@@ -5,6 +5,8 @@ from rich.markdown import Markdown
 from rich.console import Console
 from dotenv import load_dotenv
 
+from .utils import get_code
+
 
 # configuration
 load_dotenv()
@@ -16,8 +18,8 @@ console = Console()
 
 
 def geminiSolution(file_path: str) -> None:
-    with open(file_path, "r") as file:
-        response = model.generate_content("Print hello in Javascript.")
-        print("")
-        markdown = Markdown(response.text)
-        console.print(markdown)
+    code = get_code(file_path)
+    response = model.generate_content(f"Check out this javascript code, if any error occurs then give some possible solutions. Code:- {code}")
+    print("")
+    markdown = Markdown(response.text)
+    console.print(markdown)
