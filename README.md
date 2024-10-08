@@ -40,10 +40,6 @@ Replace the javascript file path _(relative | absolute)_ with `<file_name>`.
 <!-- - `python main.py <file_name>` : in case you don't want to specify solution count. -->
 <!-- - `python main.py <file_name> --msc <value>` : to specify maximum solution count replace `<value>` with with that integer, default is 5 -->
 
-## MIT License for code
-
-Our tool is licensed under the [MIT License](https://github.com/Sofiullah-Iqbal-Kiron/js-cid/blob/main/LICENSE).
-
 # Video Tutorial
 
 Or watch [this](https://youtu.be/6STIHO5lKCI) video tutorial on youtube.
@@ -56,3 +52,7 @@ Or watch [this](https://youtu.be/6STIHO5lKCI) video tutorial on youtube.
 - [x] Implement ranking
 - [ ] Use python-dotenv in development
 - [ ] Integrate max-solution-count flag
+
+## MIT License for code
+
+Our tool is licensed under the [MIT License](https://github.com/Sofiullah-Iqbal-Kiron/js-cid/blob/main/LICENSE).
