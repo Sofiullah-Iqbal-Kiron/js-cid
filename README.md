@@ -18,7 +18,7 @@ Retrieves possible solutions from stackoverflow, gemini and many other resources
 
 Install this softwares locally on your machine
 
-- [Python](https://www.python.org/) 3.0 or later to run the tool
+- [Python](https://www.python.org/) 3.12 or later to run the tool
 - [NodeJS](https://nodejs.org/en) runtime to extract traceback from error prone javascript file
 
 and a reliable internet connection.
