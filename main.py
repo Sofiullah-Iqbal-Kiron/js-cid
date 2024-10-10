@@ -37,7 +37,7 @@ def main(file_name: str, msc: int = 5) -> None:
     error_info = get_error_info(file_name)
     if error_info:
         error_at_line = error_info["line"]
-    
+
     print_code_with_rich(file_name, set([error_at_line]))
 
     if error_info:
