@@ -55,4 +55,4 @@ Or watch [this](https://youtu.be/6STIHO5lKCI) video tutorial on youtube.
 
 ## MIT License for code
 
-Our tool is licensed under the [MIT License](https://github.com/Sofiullah-Iqbal-Kiron/js-cid/blob/main/LICENSE).
+This tool is licensed under [MIT License](https://github.com/Sofiullah-Iqbal-Kiron/js-cid/blob/main/LICENSE).
