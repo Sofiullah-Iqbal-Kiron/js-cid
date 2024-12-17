@@ -56,3 +56,9 @@ Or watch [this](https://youtu.be/6STIHO5lKCI) video tutorial on youtube.
 ## MIT License for code
 
 This tool is licensed under [MIT License](https://github.com/Sofiullah-Iqbal-Kiron/js-cid/blob/main/LICENSE).
+
+### Contributors Details
+1. Dr. Syful Islam, BSMRSTU (Idea, Supervision, Survey Design, Report Writing)
+2. Sofiullah Iqbal Kiron, BSMRSTU (Implementation)
+3. S. M. Shamim, BSMRSTU (Survey)
+4. Dr. Yusuf Sulistyo Nugroho, UMS, Indonesia (Supervision, Survey Design, Report Writing)
