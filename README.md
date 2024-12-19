@@ -44,6 +44,9 @@ Replace the javascript file path _(relative | absolute)_ with `<file_name>`.
 
 Or watch [this](https://youtu.be/6STIHO5lKCI) video tutorial on youtube.
 
+# Survey
+We have conducted a survey on 38 participants. Click [here](https://docs.google.com/forms/d/162wZvoBVlBKoenST7bj-kKPafoc4wj1yX6lGOwKq9Ig/edit?ts=674ad093) to view the responses.
+
 # Todo
 
 - [x] Integrate stackoverflow api
